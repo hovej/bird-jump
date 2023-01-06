@@ -115,7 +115,6 @@ class Bird {
 	flap = (e) => {
 		if (e.keyCode !== 32) return
 		this.speed = -3
-		// if (Math.abs(this.speed) > this.maxSpeed) this.speed = this.maxSpeed * -1
 	}
 
 	update = (gravity) => {

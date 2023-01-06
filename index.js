@@ -44,9 +44,6 @@ const loadAssets = async () => {
 	return assets
 }
 
-// const assets = await loadAssets()
-// console.log('assets:', assets)
-
 displayMenu('main')
 
 // add functionality for menu buttons
