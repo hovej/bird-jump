@@ -1,0 +1,103 @@
+canvas {
+	border: 1px solid black;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+#game {
+	z-index: 20;
+}
+
+#score {
+	position: absolute;
+	top: 15px;
+	left: 250px;
+}
+
+.menu {
+	border: 1px solid black;
+	border-radius: 5px;
+	z-index: 30;
+	width: 450px;
+	height: 250px;
+	position: absolute;
+	top: 75px;
+	left: 75px;
+	text-align: center;
+	background-color: white;
+}
+
+button {
+	border: 1px solid;
+	border-radius: 5px;
+}
+button:hover {
+	cursor: pointer;
+}
+
+#difficulties {
+	display: flex;
+	width: 300px;
+	margin: auto;
+	justify-content: space-evenly;
+}
+#difficulties button {
+	width: 70px;
+	height: 35px;
+}
+#easy {
+	background-color: green;
+}
+#easy:hover {
+	background-color: lightgreen;
+}
+#medium {
+	background-color: yellow;
+}
+#medium:hover {
+	background-color: lightyellow;
+}
+#hard {
+	background-color: red;
+}
+#hard:hover {
+	background-color: pink;
+}
+
+#howToPlay {
+	margin: 40px;
+	width: 100px;
+	height: 30px;
+	background-color: #ccc;
+}
+#howToPlay:hover {
+	background-color: #ddd;
+}
+
+#instructions h4 {
+	margin: 0;
+	margin-top: 30px;
+}
+#instructions p {
+	margin: 10px;
+}
+#returnToMenu {
+	position: relative;
+	right: 150px;
+	width: 75px;
+	height: 25px;
+	background-color: #ccc;
+}
+#returnToMenu:hover {
+	background-color: #ddd;
+}
+
+#deathMenu button {
+	width: 75px;
+	height: 25px;
+	margin: 5px;
+	background-color: #ddd;
+}
+#deathMenu button:hover {
+	background-color: #eee;
+}

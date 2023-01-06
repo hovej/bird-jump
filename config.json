@@ -1,0 +1,32 @@
+{
+	"startingY": 100,
+	"birdSize": 30,
+	"physics": {
+		"gravity": 8,
+		"maxSpeed": 10
+	},
+	"easy": {
+		"yMin": 250,
+		"yMax": 350,
+		"gapMin": 150,
+		"gapMax": 250,
+		"gameSpeed": 5,
+		"frequency": 120
+	},
+	"medium": {
+		"yMin": 150,
+		"yMax": 350,
+		"gapMin": 100,
+		"gapMax": 150,
+		"gameSpeed": 6,
+		"frequency": 100
+	},
+	"hard": {
+		"yMin": 100,
+		"yMax": 375,
+		"gapMin": 60,
+		"gapMax": 100,
+		"gameSpeed": 7,
+		"frequency": 80
+	}
+}
