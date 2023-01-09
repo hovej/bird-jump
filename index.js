@@ -44,7 +44,7 @@ const loadAssets = async () => {
 	return assets
 }
 
-displayMenu('main')
+displayMenu('version')
 
 // add functionality for menu buttons
 // main menu
@@ -59,3 +59,7 @@ document.getElementById('returnToMenu').addEventListener('click', () => displayM
 
 // death menu
 document.getElementById('endGame').addEventListener('click', () => displayMenu('main'))
+
+// versions menu
+document.getElementById('seeVersions').addEventListener('click', () => displayMenu('version'))
+document.getElementById('return').addEventListener('click', () => displayMenu('main'))

@@ -74,13 +74,13 @@ button:hover {
 	background-color: #555;
 }
 
-#howToPlay {
-	margin: 40px;
-	width: 100px;
+.otherMenuBtn {
+	margin: 40px 25px;
+	width: 120px;
 	height: 30px;
 	background-color: #ccc;
 }
-#howToPlay:hover {
+.otherMenuBtn:hover {
 	background-color: #ddd;
 }
 
@@ -109,5 +109,14 @@ button:hover {
 	background-color: #ddd;
 }
 #deathMenu button:hover {
+	background-color: #eee;
+}
+
+#futureUpdates button {
+	width: 75px;
+	height: 25px;
+	background-color: #ddd;
+}
+#futureUpdates button:hover {
 	background-color: #eee;
 }
