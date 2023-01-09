@@ -30,6 +30,8 @@ canvas {
 button {
 	border: 1px solid;
 	border-radius: 5px;
+	text-align: center;
+	padding: 2px;
 }
 button:hover {
 	cursor: pointer;
@@ -37,13 +39,14 @@ button:hover {
 
 #difficulties {
 	display: flex;
-	width: 300px;
+	width: 75%;
 	margin: auto;
 	justify-content: space-evenly;
 }
 #difficulties button {
-	width: 70px;
+	width: 100px;
 	height: 35px;
+	margin: 10px;
 }
 #easy {
 	background-color: green;
@@ -62,6 +65,13 @@ button:hover {
 }
 #hard:hover {
 	background-color: pink;
+}
+#extreme {
+	background-color: black;
+	color: white;
+}
+#extreme:hover {
+	background-color: #555;
 }
 
 #howToPlay {

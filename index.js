@@ -51,6 +51,7 @@ displayMenu('main')
 document.getElementById('easy').addEventListener('click', () => startNewGame('easy'))
 document.getElementById('medium').addEventListener('click', () => startNewGame('medium'))
 document.getElementById('hard').addEventListener('click', () => startNewGame('hard'))
+document.getElementById('extreme').addEventListener('click', () => startNewGame('extreme'))
 
 // instructions menu
 document.getElementById('howToPlay').addEventListener('click', () => displayMenu('instructions'))

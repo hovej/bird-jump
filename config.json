@@ -22,6 +22,14 @@
 		"frequency": 100
 	},
 	"hard": {
+		"yMin": 120,
+		"yMax": 350,
+		"gapMin": 80,
+		"gapMax": 120,
+		"gameSpeed": 6,
+		"frequency": 85
+	},
+	"extreme": {
 		"yMin": 100,
 		"yMax": 375,
 		"gapMin": 60,
