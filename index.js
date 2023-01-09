@@ -44,7 +44,7 @@ const loadAssets = async () => {
 	return assets
 }
 
-displayMenu('version')
+displayMenu('main')
 
 // add functionality for menu buttons
 // main menu
