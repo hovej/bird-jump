@@ -91,6 +91,8 @@ class Game {
 
 	render = () => {
 		this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height)
+
+		this.ctx.fillStyle = 'black'
 		this.ctx.fillText(`FPS: ${this.fps}`, this.canvas.width - 50, 20)
 		this.player.render()
 		this.obstacles.forEach(pipe => pipe.render())
@@ -182,11 +184,21 @@ class Pipe {
 	}
 
 	render = () => {
+		// set styles
+		this.ctx.fillStyle = '#00E500'
+		// this.ctx.lineWidth = 1
+
 		// draw bottom
 		this.ctx.fillRect(this.x, this.y, this.width, this.canvas.height)
+		this.ctx.strokeRect(this.x, this.y, this.width, this.canvas.height)
+		this.ctx.fillRect(this.x - 10, this.y, this.width + 20, 15)
+		this.ctx.strokeRect(this.x - 10, this.y, this.width + 20, 15)
 
 		// draw top
 		this.ctx.fillRect(this.x, 0, this.width, this.y - this.gap)
+		this.ctx.strokeRect(this.x, 0, this.width, this.y - this.gap)
+		this.ctx.fillRect(this.x - 10, this.y - this.gap - 15, this.width + 20, 15)
+		this.ctx.strokeRect(this.x - 10, this.y - this.gap - 15, this.width + 20, 15)
 	}
 }
 
