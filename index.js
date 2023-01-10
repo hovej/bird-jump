@@ -1,5 +1,6 @@
 import { Game } from './classes.js'
 import { displayMenu } from './handle-menus.js'
+import { versionHistory } from './versionHistory.js'
 
 // setup and start new game
 const startNewGame = async difficulty => {
@@ -47,6 +48,7 @@ const loadAssets = async () => {
 }
 
 displayMenu('main')
+document.getElementById('versions').innerHTML = versionHistory
 
 // add functionality for menu buttons
 // main menu
@@ -64,4 +66,3 @@ document.getElementById('endGame').addEventListener('click', () => displayMenu('
 
 // versions menu
 document.getElementById('seeVersions').addEventListener('click', () => displayMenu('version'))
-document.getElementById('return').addEventListener('click', () => displayMenu('main'))

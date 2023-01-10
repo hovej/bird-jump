@@ -4,6 +4,12 @@ const displayMenu = (type, score) => {
 	const death = document.getElementById('deathMenu')
 	const version = document.getElementById('futureUpdates')
 
+	// if type is version, just toggle menu without changing others
+	if (type === 'version') {
+		version.style.display = version.style.display === '' ? version.style.display = 'none' : ''
+		return
+	}
+
 	mainMenu.style.display = 'none'
 	instructions.style.display = 'none'
 	death.style.display = 'none'
@@ -21,8 +27,6 @@ const displayMenu = (type, score) => {
 			document.getElementById('finalScore').innerHTML = `FINAL SCORE: ${score}`
 			document.getElementById('score').innerHTML = ''
 			break;
-		case 'version':
-			version.style.display = ''
 		default:
 			break;
 	}
