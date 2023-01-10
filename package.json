@@ -1,5 +1,5 @@
 {
-  "name": "flappy-bird",
+  "name": "bird-jump",
   "version": "0.0.2",
   "main": "index.js",
   "scripts": {

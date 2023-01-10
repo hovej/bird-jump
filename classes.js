@@ -91,6 +91,8 @@ class Game {
 
 	render = () => {
 		this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height)
+		this.ctx.fillStyle = 'skyblue'
+		this.ctx.fillRect(0,0,this.canvas.width, this.canvas.height)
 
 		this.ctx.fillStyle = 'black'
 		this.ctx.fillText(`FPS: ${this.fps}`, this.canvas.width - 50, 20)
