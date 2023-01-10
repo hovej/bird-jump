@@ -25,7 +25,6 @@ const startNewGame = async difficulty => {
 }
 
 const loadAssets = async () => {
-	console.log('loading assets...')
 	const assets = {}
 	const downFlap = new Image()
 	downFlap.src = './assets/bluebird-downflap.png'
@@ -40,7 +39,6 @@ const loadAssets = async () => {
 	await upFlap.decode()
 
 	assets.bird = [midFlap, downFlap, midFlap, upFlap]
-	console.log('loading complete')
 	return assets
 }
 
