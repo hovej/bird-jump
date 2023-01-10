@@ -12,12 +12,16 @@ const startNewGame = async difficulty => {
 		maxSpeed: configData.physics.maxSpeed,
 		startingY: configData.startingY,
 		difficulty: {
+			difficultyLevel: difficulty,
 			...configData[difficulty]
 		},
 		assets
 	})
 
 	displayMenu()
+
+	// add onclick to retry button
+	document.getElementById('retry').onclick = (e) => startNewGame(difficulty)
 
 	// add player control listener
 	window.addEventListener('keydown', e => (newGame.player.flap(e)))

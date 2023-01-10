@@ -5,11 +5,12 @@ class Game {
 		this.canvas = data.canvas
 		this.ctx = data.canvas.getContext('2d')
 		this.assets = data.assets
-		this.player = new Bird({y: data.startingY, canvas: this.canvas, ctx: this.ctx, maxSpeed: data.maxSpeed, assets: this.assets.bird})
+		this.player = new Bird({ y: data.startingY, canvas: this.canvas, ctx: this.ctx, maxSpeed: data.maxSpeed, assets: this.assets.bird })
 		this.currentScore = 0
-		this.obstacles = [],
+		this.obstacles = []
 		this.gravity = data.gravity
-		this.timeSinceLastPipe = 0,
+		this.timeSinceLastPipe = 0
+		this.difficultyLevel = data.difficulty.difficultyLevel
 		this.pipeFrequency = data.difficulty.frequency
 		this.gameSpeed = data.difficulty.gameSpeed
 		this.pipeSettings = {
@@ -52,7 +53,7 @@ class Game {
 		if (this.player.alive) {
 			window.requestAnimationFrame(this.run)
 		} else {
-			displayMenu('death', this.currentScore)
+			displayMenu('death', this.currentScore, this.difficultyLevel)
 		}
 	}
 
@@ -83,16 +84,16 @@ class Game {
 	}
 
 	checkCollision = () => {
-		for (let i=0; i<this.obstacles.length; i++) {
+		for (let i = 0; i < this.obstacles.length; i++) {
 			if (this.player.checkCollision(this.obstacles[i])) return true
 		}
 		return false
 	}
 
 	render = () => {
-		this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height)
+		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
 		this.ctx.fillStyle = 'skyblue'
-		this.ctx.fillRect(0,0,this.canvas.width, this.canvas.height)
+		this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
 
 		this.ctx.fillStyle = 'black'
 		this.ctx.fillText(`FPS: ${this.fps}`, this.canvas.width - 50, 20)
@@ -109,7 +110,7 @@ class Bird {
 		this.spriteInterval = 0
 		this.currentSprite = 0
 		this.alive = true,
-		this.x = 200
+			this.x = 200
 		this.y = data.y
 		this.speed = 0
 		this.maxSpeed = data.maxSpeed
@@ -204,4 +205,4 @@ class Pipe {
 	}
 }
 
-export {Game}
+export { Game }
