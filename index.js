@@ -1,5 +1,6 @@
 import { Game } from './classes.js'
 import { displayMenu } from './handle-menus.js'
+import { versionHistory } from './versionHistory.js'
 
 // setup and start new game
 const startNewGame = async difficulty => {
@@ -12,6 +13,7 @@ const startNewGame = async difficulty => {
 		maxSpeed: configData.physics.maxSpeed,
 		startingY: configData.startingY,
 		difficulty: {
+			difficultyLevel: difficulty,
 			...configData[difficulty]
 		},
 		assets
@@ -19,13 +21,15 @@ const startNewGame = async difficulty => {
 
 	displayMenu()
 
+	// add onclick to retry button
+	document.getElementById('retry').onclick = (e) => startNewGame(difficulty)
+
 	// add player control listener
-	window.addEventListener('keydown', e => (newGame.player.flap(e)))
+	window.onkeydown = e => (newGame.player.flap(e))
 	newGame.start()
 }
 
 const loadAssets = async () => {
-	console.log('loading assets...')
 	const assets = {}
 	const downFlap = new Image()
 	downFlap.src = './assets/bluebird-downflap.png'
@@ -40,11 +44,11 @@ const loadAssets = async () => {
 	await upFlap.decode()
 
 	assets.bird = [midFlap, downFlap, midFlap, upFlap]
-	console.log('loading complete')
 	return assets
 }
 
 displayMenu('main')
+document.getElementById('versions').innerHTML = versionHistory
 
 // add functionality for menu buttons
 // main menu
@@ -62,4 +66,3 @@ document.getElementById('endGame').addEventListener('click', () => displayMenu('
 
 // versions menu
 document.getElementById('seeVersions').addEventListener('click', () => displayMenu('version'))
-document.getElementById('return').addEventListener('click', () => displayMenu('main'))

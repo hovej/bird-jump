@@ -5,11 +5,12 @@ class Game {
 		this.canvas = data.canvas
 		this.ctx = data.canvas.getContext('2d')
 		this.assets = data.assets
-		this.player = new Bird({y: data.startingY, canvas: this.canvas, ctx: this.ctx, maxSpeed: data.maxSpeed, assets: this.assets.bird})
+		this.player = new Bird({ y: data.startingY, canvas: this.canvas, ctx: this.ctx, maxSpeed: data.maxSpeed, assets: this.assets.bird })
 		this.currentScore = 0
-		this.obstacles = [],
+		this.obstacles = []
 		this.gravity = data.gravity
-		this.timeSinceLastPipe = 0,
+		this.timeSinceLastPipe = 0
+		this.difficultyLevel = data.difficulty.difficultyLevel
 		this.pipeFrequency = data.difficulty.frequency
 		this.gameSpeed = data.difficulty.gameSpeed
 		this.pipeSettings = {
@@ -52,7 +53,7 @@ class Game {
 		if (this.player.alive) {
 			window.requestAnimationFrame(this.run)
 		} else {
-			displayMenu('death', this.currentScore)
+			displayMenu('death', this.currentScore, this.difficultyLevel)
 		}
 	}
 
@@ -83,14 +84,18 @@ class Game {
 	}
 
 	checkCollision = () => {
-		for (let i=0; i<this.obstacles.length; i++) {
+		for (let i = 0; i < this.obstacles.length; i++) {
 			if (this.player.checkCollision(this.obstacles[i])) return true
 		}
 		return false
 	}
 
 	render = () => {
-		this.ctx.clearRect(0,0,this.canvas.width, this.canvas.height)
+		this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height)
+		this.ctx.fillStyle = 'skyblue'
+		this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height)
+
+		this.ctx.fillStyle = 'black'
 		this.ctx.fillText(`FPS: ${this.fps}`, this.canvas.width - 50, 20)
 		this.player.render()
 		this.obstacles.forEach(pipe => pipe.render())
@@ -104,7 +109,7 @@ class Bird {
 		this.sprites = data.assets
 		this.spriteInterval = 0
 		this.currentSprite = 0
-		this.alive = true,
+		this.alive = true
 		this.x = 200
 		this.y = data.y
 		this.speed = 0
@@ -182,12 +187,22 @@ class Pipe {
 	}
 
 	render = () => {
+		// set styles
+		this.ctx.fillStyle = '#00E500'
+		// this.ctx.lineWidth = 1
+
 		// draw bottom
 		this.ctx.fillRect(this.x, this.y, this.width, this.canvas.height)
+		this.ctx.strokeRect(this.x, this.y, this.width, this.canvas.height)
+		this.ctx.fillRect(this.x - 10, this.y, this.width + 20, 15)
+		this.ctx.strokeRect(this.x - 10, this.y, this.width + 20, 15)
 
 		// draw top
 		this.ctx.fillRect(this.x, 0, this.width, this.y - this.gap)
+		this.ctx.strokeRect(this.x, 0, this.width, this.y - this.gap)
+		this.ctx.fillRect(this.x - 10, this.y - this.gap - 15, this.width + 20, 15)
+		this.ctx.strokeRect(this.x - 10, this.y - this.gap - 15, this.width + 20, 15)
 	}
 }
 
-export {Game}
+export { Game }

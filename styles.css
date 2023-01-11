@@ -12,6 +12,7 @@ canvas {
 	position: absolute;
 	top: 15px;
 	left: 250px;
+	z-index: 25;
 }
 
 .menu {
@@ -91,16 +92,6 @@ button:hover {
 #instructions p {
 	margin: 10px;
 }
-#returnToMenu {
-	position: relative;
-	right: 150px;
-	width: 75px;
-	height: 25px;
-	background-color: #ccc;
-}
-#returnToMenu:hover {
-	background-color: #ddd;
-}
 
 #deathMenu button {
 	width: 75px;
@@ -112,11 +103,18 @@ button:hover {
 	background-color: #eee;
 }
 
-#futureUpdates button {
-	width: 75px;
-	height: 25px;
-	background-color: #ddd;
+#futureUpdates {
+	position: absolute;
+	top: 400px;
+	left: 10px;
+	width: 50vw;
 }
-#futureUpdates button:hover {
-	background-color: #eee;
+#futureUpdates h2 {
+	margin-bottom: 10px;
+}
+#futureUpdates h4 {
+	margin-bottom: 3px;
+}
+#futureUpdates p {
+	margin: 3px;
 }
