@@ -25,7 +25,7 @@ const startNewGame = async difficulty => {
 	document.getElementById('retry').onclick = (e) => startNewGame(difficulty)
 
 	// add player control listener
-	window.addEventListener('keydown', e => (newGame.player.flap(e)))
+	window.onkeydown = e => (newGame.player.flap(e))
 	newGame.start()
 }
 

@@ -109,8 +109,8 @@ class Bird {
 		this.sprites = data.assets
 		this.spriteInterval = 0
 		this.currentSprite = 0
-		this.alive = true,
-			this.x = 200
+		this.alive = true
+		this.x = 200
 		this.y = data.y
 		this.speed = 0
 		this.maxSpeed = data.maxSpeed
